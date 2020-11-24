@@ -2,10 +2,10 @@
 let eqArrays = function(arr1, arr2) {
   for (let index in arr1) {
     if (arr1[index] !== arr2[index]) {
-      return console.log("false");
+      return console.log("🔴🔴🔴 false");
     }
   }
-  return console.log("true");
+  return console.log("👍👍👍 true");
 };
 
 // TEST CODE
