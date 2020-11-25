@@ -23,7 +23,11 @@ let middle = function(arr) {
     return newArr;
   } else if (arr.length % 2 === 1) {
     newArr.push(arr[mid]);
-  } 
+  } else if (arr.length % 2 === 0) {
+    for (let i = (mid - 1); i <= mid; i++) {
+      newArr.push(arr[i]);
+    }
+  }
   return newArr;
 };
 
