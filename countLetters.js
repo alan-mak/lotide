@@ -22,4 +22,4 @@ let countLetters = function(input) {
 // TEST CASES
 let counter = countLetters('lhl');
 assertEqual(counter["l"], 2);
-assertEqual(counter["h"], 1)
+assertEqual(counter["h"], 1);
