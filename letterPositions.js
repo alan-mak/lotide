@@ -20,13 +20,16 @@ const letterPositions = function(sentence) {
   const results = {};
   let noSpace = sentence.split(" ").join("");
   // logic to update results here
-  for (let i in noSpace) {
-    if(noSpace[i]) {
-      results[noSpace[i]] = [i]
-    } 
+  for (let index in noSpace) {
+    let i = parseInt(index);
+    if (results[noSpace[i]]) {
+      results[noSpace[i]].push(i)
+    } else {
+      results[noSpace[i]] = [i];
+    }
+  
   }
-  console.log(results)
   return results;
 };
-
-letterPositions('hello')
+console.log(letterPositions("hello"))
+assertArraysEqual(letterPositions('hello').e, [1])
