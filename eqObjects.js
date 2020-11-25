@@ -10,7 +10,7 @@ let eqArrays = function(arr1, arr2) {
   if (arr1.length !== arr2.length) {
     return false;
   } else {
-      for (let index in arr1) {
+    for (let index in arr1) {
       if (arr1[index] !== arr2[index]) {
         return false;
       }
@@ -27,7 +27,7 @@ const eqObjects = function(object1, object2) {
   if (keys1.length !== keys2.length) {
     return false;
   }
-  for(let key of keys1) {
+  for (let key of keys1) {
     if (Array.isArray(object1[key])) {
       return eqArrays(object1[key], object2[key])
       ;
