@@ -10,14 +10,14 @@ let findKeyByValue = function(obj, show) {
   let keys = Object.keys(obj);
   let values = Object.values(obj);
   for (let value in values) {
-    if (values[value] === show ) {
+    if (values[value] === show) {
       return keys[value];
     }
   }
 };
 
 // TEST CASES
-const bestTVShowsByGenre = { 
+const bestTVShowsByGenre = {
   sci_fi: "The Expanse",
   comedy: "Brooklyn Nine-Nine",
   drama:  "The Wire"
