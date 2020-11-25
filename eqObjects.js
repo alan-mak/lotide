@@ -7,9 +7,13 @@ const assertEqual = function(actual, expected) {
 };
 
 let eqArrays = function(arr1, arr2) {
-  for (let index in arr1) {
-    if (arr1[index] !== arr2[index]) {
-      return false;
+  if (arr1.length !== arr2.length) {
+    return false;
+  } else {
+      for (let index in arr1) {
+      if (arr1[index] !== arr2[index]) {
+        return false;
+      }
     }
   }
   return true;
@@ -23,9 +27,11 @@ const eqObjects = function(object1, object2) {
   if (keys1.length !== keys2.length) {
     return false;
   }
-    // console.log(keys1)
   for(let key of keys1) {
-    if (object1[key] !== object2[key]) {
+    if (Array.isArray(object1[key])) {
+      return eqArrays(object1[key], object2[key])
+      ;
+    } else if (object1[key] !== object2[key]) {
       return false;
     }
   }
