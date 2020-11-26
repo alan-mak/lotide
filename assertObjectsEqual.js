@@ -23,7 +23,7 @@ const assertObjectsEqual = function(actual, expected) {
   } else {
     console.log(`🔴🔴🔴 Assertion Failed: "${inspect(actual)}" !== "${inspect(expected)}"`);
   }
-
+  // Line used to show how to display an object using a different package.
   // console.log(`Example label: ${inspect(actual)}`);
 };
 
