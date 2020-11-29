@@ -1,19 +1,22 @@
-let assertArraysEqual = function(arr1, arr2) {
-  for (let index in arr1) {
-    if (arr1[index] !== arr2[index]) {
-      return console.log("🔴🔴🔴 false");
+let eqArrays = function(arr1, arr2) {
+  if (arr1.length !== arr2.length) {
+    return false;
+  } else {
+    for (let index in arr1) {
+      if (arr1[index] !== arr2[index]) {
+        return false;
+      }
     }
+    return true;
   }
-  return console.log("👍👍👍 true");
 };
 
-let eqArrays = function(arr1, arr2) {
-  for (let index in arr1) {
-    if (arr1[index] !== arr2[index]) {
-      return false;
-    }
+let assertArraysEqual = function(arr1, arr2) {
+  if (!eqArrays(arr1, arr2)) {
+     console.log(`🔴🔴🔴 false ${arr1} !== ${arr2}`);
+  } else {
+     console.log(`👍👍👍 true ${arr1} === ${arr2}`);
   }
-  return true;
 };
 
 let middle = function(arr) {
@@ -32,9 +35,9 @@ let middle = function(arr) {
 };
 
 // TEST CASES
-console.log(middle([1])); // => []
+assertArraysEqual(middle([1]), []); // => []
 console.log(middle([1, 2])); // => []
-console.log(middle([1, 2, 3])); // => [2]
+assertArraysEqual(middle([1, 2, 3]), [2]); // => [2]
 console.log(middle([1, 2, 3, 4, 5])); // => [3]
 console.log(middle([1, 2, 3, 4])); // => [2, 3]
 console.log(middle([1, 2, 3, 4, 5, 6])); // => [3, 4]
