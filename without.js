@@ -1,19 +1,22 @@
 let eqArrays = function(arr1, arr2) {
-  for (let index in arr1) {
-    if (arr1[index] !== arr2[index]) {
-      return false;
+  if (arr1.length !== arr2.length) {
+    return false;
+  } else {
+    for (let index in arr1) {
+      if (arr1[index] !== arr2[index]) {
+        return false;
+      }
     }
+    return true;
   }
-  return true;
 };
 
 let assertArraysEqual = function(arr1, arr2) {
-  for (let index in arr1) {
-    if (arr1[index] !== arr2[index]) {
-      return console.log(`🔴🔴🔴 false [${arr1}] !== [${arr2}]`);
-    }
+  if (!eqArrays(arr1, arr2)) {
+     console.log(`🔴🔴🔴 false ${arr1} !== ${arr2}`);
+  } else {
+     console.log(`👍👍👍 true ${arr1} === ${arr2}`);
   }
-  return console.log(`👍👍👍 true [${arr1}] === [${arr2}]`);
 };
 
 let without = function(source, itemsToRemove) {
