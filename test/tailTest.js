@@ -16,7 +16,4 @@ describe("#Tail", () => {
     assert.strictEqual(words.length, 3)
   });
 
-})
-
-
-// assertEqual(words.length, 3); // original array should still have 3 elements!
+});
